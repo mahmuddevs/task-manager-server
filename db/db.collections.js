@@ -1,5 +1,5 @@
 import connectDB from "./db.config.js"
 
-const db = connectDB()
+const db = await connectDB()
 
 export const userCollection = db.collection('users')
