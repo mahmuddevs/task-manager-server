@@ -1,8 +1,9 @@
 import express from 'express'
 import 'dotenv/config'
 import cors from 'cors'
-import connectDB from './db/db.config.js'
 import userRouter from './routes/users.js'
+import connectDB from './db/db.config.js'
+import taskRouter from './routes/tasks.js'
 
 
 const app = express()
@@ -15,6 +16,7 @@ app.use(express.json())
 
 //routes
 app.use('/users', userRouter)
+app.use('/tasks', taskRouter)
 
 app.get('/', (req, res) => {
     res.send('hello world')
